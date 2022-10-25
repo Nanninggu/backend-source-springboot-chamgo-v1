@@ -1,0 +1,28 @@
+{{>layouts/header}}
+
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">아이디</th>
+        <th scope="col">제목</th>
+        <th scope="col">내용</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#article}}
+        <tr>
+            <td>{{id}}</td>
+            <td>{{title}}</td>
+            <td>{{content}}</td>
+        </tr>
+    {{/article}}
+    </tbody>
+</table>
+
+<a href="/articles/{{article.id}}/edit" class="btn btn-primary">수정</a>
+<a href="/articles/{{article.id}}/delete" class="btn btn-danger">삭제</a>
+<a href="/articles">메인 페이지로 이동</a>
+
+{{>comments/_comments}}
+
+{{>layouts/footer}}
